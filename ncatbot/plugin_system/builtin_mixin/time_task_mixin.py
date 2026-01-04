@@ -22,7 +22,7 @@ from uuid import UUID
 from ncatbot.utils import get_log
 
 if TYPE_CHECKING:
-    from ncatbot.core.service.builtin.time_task import TimeTaskService
+    from ncatbot.service.builtin.time_task import TimeTaskService
     from ncatbot.core import NcatBotEvent
 
 

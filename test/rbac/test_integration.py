@@ -6,7 +6,7 @@ RBAC 集成测试
 
 import pytest
 import asyncio
-from ncatbot.core.service.builtin.rbac import RBACService
+from ncatbot.service.rbac import RBACService
 
 
 class TestLifecycle:

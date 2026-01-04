@@ -1,8 +1,8 @@
 """参数解析测试插件"""
 
 from ncatbot.plugin_system import NcatBotPlugin
-from ncatbot.core.service.builtin.unified_registry import command_registry
-from ncatbot.core.service.builtin.unified_registry.command_system.registry.decorators import (
+from ncatbot.service.unified_registry import command_registry
+from ncatbot.service.unified_registry.command_system.registry.decorators import (
     option,
     param,
     option_group,

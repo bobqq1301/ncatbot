@@ -11,7 +11,7 @@
 import pytest
 import base64
 
-from ncatbot.core.service.builtin.preupload.utils import (
+from ncatbot.service.preupload.utils import (
     is_local_file,
     is_base64_data,
     is_remote_url,
@@ -21,7 +21,7 @@ from ncatbot.core.service.builtin.preupload.utils import (
     generate_filename_from_type,
     DOWNLOADABLE_TYPES,
 )
-from ncatbot.core.service.builtin.preupload.client import StreamUploadClient
+from ncatbot.service.preupload.client import StreamUploadClient
 
 
 class TestPreUploadUtils:
@@ -166,7 +166,7 @@ class TestStreamUploadClient:
         - SHA256 哈希计算
         - Base64 编码验证
         """
-        from ncatbot.core.service.builtin.preupload.constants import DEFAULT_CHUNK_SIZE
+        from ncatbot.service.preupload.constants import DEFAULT_CHUNK_SIZE
 
         # 创建模拟的 message_router（分析不需要实际连接）
         class MockRouter:

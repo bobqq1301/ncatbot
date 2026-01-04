@@ -1,6 +1,6 @@
 """高级命令解析器高级和集成测试"""
 
-from ncatbot.core.service.builtin.unified_registry.command_system.lexer import (
+from ncatbot.service.unified_registry.command_system.lexer import (
     StringTokenizer,
     AdvancedCommandParser,
     Token,

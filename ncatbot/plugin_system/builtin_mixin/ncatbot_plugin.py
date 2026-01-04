@@ -5,13 +5,11 @@ NcatBot 插件基类
 事件系统接口由 BasePlugin 提供。
 """
 
-from pathlib import Path
 from typing import final, Any, TYPE_CHECKING
 
 from ncatbot.plugin_system import BasePlugin
-from ncatbot.plugin_system.config import config
 from ncatbot.core import EventBus
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 from ncatbot.utils import get_log
 
 from .time_task_mixin import TimeTaskMixin
@@ -72,9 +70,6 @@ class NcatBotPlugin(BasePlugin, TimeTaskMixin, ConfigMixin):
         self._handlers_id = set()
         self.services = service_manager
 
-        self.workspace = Path(config.plugins_data_dir) / self.name
-        self._legacy_data_file = self.workspace / f"{self.name}.yaml"
-
     # ------------------------------------------------------------------
     # 生命周期方法
     # ------------------------------------------------------------------
@@ -93,12 +88,11 @@ class NcatBotPlugin(BasePlugin, TimeTaskMixin, ConfigMixin):
     @final
     async def __onload__(self) -> None:
         """由框架在加载插件时调用。"""
-        self.workspace.mkdir(exist_ok=True, parents=True)
 
         # 加载配置（迁移逻辑由 Service 处理）
         await self.services.plugin_config.reload_plugin_config(self.name)
         self.config = await self.services.plugin_config.get_or_migrate_config(
-            self.name, self._legacy_data_file
+            self.name, None
         )
 
         # 加载持久化数据

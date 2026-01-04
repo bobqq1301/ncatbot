@@ -15,8 +15,8 @@ from pathlib import Path
 from unittest.mock import patch
 import yaml
 
-from ncatbot.core.service import ServiceManager
-from ncatbot.core.service.builtin.plugin_config import PluginConfigService
+from ncatbot.service import ServiceManager
+from ncatbot.service.plugin_config import PluginConfigService
 
 
 # =============================================================================
@@ -55,7 +55,7 @@ class TestConfigMigration:
 
         try:
             with patch(
-                "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+                "ncatbot.service.plugin_config.service.CONFIG_PATH",
                 temp_config_file,
             ):
                 manager.register(PluginConfigService)
@@ -85,7 +85,7 @@ class TestConfigMigration:
         nonexistent_file = Path("/nonexistent/path/plugin.yaml")
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -120,7 +120,7 @@ class TestConfigMigration:
 
         try:
             with patch(
-                "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+                "ncatbot.service.plugin_config.service.CONFIG_PATH",
                 temp_config_file,
             ):
                 manager.register(PluginConfigService)
@@ -160,7 +160,7 @@ class TestConfigChangeCallback:
             callback_log.append({"old": old, "new": new})
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -196,7 +196,7 @@ class TestConfigChangeCallback:
             callback_log.append({"old": old, "new": new})
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -234,7 +234,7 @@ class TestEdgeCases:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -257,7 +257,7 @@ class TestEdgeCases:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -277,7 +277,7 @@ class TestEdgeCases:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -305,7 +305,7 @@ class TestEdgeCases:
         manager2 = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager2.register(PluginConfigService)
@@ -327,7 +327,7 @@ class TestEdgeCases:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -349,7 +349,7 @@ class TestEdgeCases:
         manager2 = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager2.register(PluginConfigService)

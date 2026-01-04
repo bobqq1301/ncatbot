@@ -174,7 +174,7 @@ async def setup_connection():
     """建立连接并返回 BotAPI"""
     from ncatbot.core.api import BotAPI
     from ncatbot.core.adapter.nc import NapCatService
-    from ncatbot.core.service import MessageRouter, ServiceManager, PreUploadService
+    from ncatbot.service import MessageRouter, ServiceManager, PreUploadService
 
     print(f"{Colors.BLUE}正在连接 NapCat 服务...{Colors.ENDC}")
 

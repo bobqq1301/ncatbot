@@ -11,7 +11,7 @@ from unittest.mock import MagicMock, AsyncMock, patch
 
 from ncatbot.core.client.lifecycle import LifecycleManager, NcatBotError
 from ncatbot.core.api import BotAPI
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 from ncatbot.core.client.registry import EventRegistry
 
 # ======================= Fixtures =======================

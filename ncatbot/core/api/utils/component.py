@@ -12,7 +12,7 @@ from .errors import NapCatAPIError
 
 if TYPE_CHECKING:
     from ..client import IAPIClient, APIResponse
-    from ncatbot.core.service import ServiceManager
+    from ncatbot.service import ServiceManager
 
 LOG = get_log("API")
 

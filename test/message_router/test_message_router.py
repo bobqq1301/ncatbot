@@ -13,7 +13,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-from ncatbot.core.service.builtin.message_router import MessageRouter
+from ncatbot.service.message_router import MessageRouter
 
 
 class TestMessageRouterInit:
@@ -229,10 +229,10 @@ class TestOnLoad:
     """on_load 方法测试"""
 
     @pytest.mark.asyncio
-    @patch("ncatbot.core.service.builtin.message_router.NapCatWebSocket")
+    @patch("ncatbot.service.message_router.service.NapCatWebSocket")
     async def test_on_load_creates_websocket(self, mock_ws_class):
         """测试加载时创建 WebSocket"""
-        mock_ws = MagicMock()
+        mock_ws = AsyncMock()
         mock_ws.connect = AsyncMock()
         mock_ws_class.return_value = mock_ws
 

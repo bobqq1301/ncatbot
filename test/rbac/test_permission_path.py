@@ -3,7 +3,7 @@ PermissionPath 单元测试
 """
 
 import pytest
-from ncatbot.core.service.builtin.rbac.path import PermissionPath
+from ncatbot.service.rbac.path import PermissionPath
 
 
 class TestPermissionPathInit:

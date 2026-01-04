@@ -67,7 +67,7 @@ class TestBotClientComponents:
     def test_client_services_type(self):
         """ServiceManager 类型正确"""
         from ncatbot.core.client.client import BotClient
-        from ncatbot.core.service import ServiceManager
+        from ncatbot.service import ServiceManager
 
         client = BotClient()
 

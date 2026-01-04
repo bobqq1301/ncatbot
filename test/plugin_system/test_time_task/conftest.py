@@ -6,7 +6,7 @@ import asyncio
 import pytest
 from uuid import uuid4
 
-from ncatbot.core.service.builtin.time_task import TimeTaskService
+from ncatbot.service.time_task import TimeTaskService
 
 
 class MockEventBus:

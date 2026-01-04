@@ -13,16 +13,16 @@ import tempfile
 import os
 from typing import TYPE_CHECKING, cast, Any
 
-from ncatbot.core.service.builtin.preupload import PreUploadService
-from ncatbot.core.service.builtin.preupload.client import (
+from ncatbot.service.preupload import PreUploadService
+from ncatbot.service.preupload.client import (
     StreamUploadClient,
     UploadResult,
 )
-from ncatbot.core.service.builtin.preupload.processor import ProcessResult
-from ncatbot.core.service.builtin.preupload.result import PreUploadResult
+from ncatbot.service.preupload.processor import ProcessResult
+from ncatbot.service.preupload.result import PreUploadResult
 
 if TYPE_CHECKING:
-    from ncatbot.core.service.builtin.message_router import MessageRouter
+    from ncatbot.service.message_router import MessageRouter
 
 
 class TestPreUploadServiceNotInitialized:

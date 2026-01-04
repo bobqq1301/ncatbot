@@ -1,7 +1,7 @@
 """热重载测试插件"""
 
 from ncatbot.plugin_system import NcatBotPlugin
-from ncatbot.core.service.builtin.unified_registry import command_registry
+from ncatbot.service.unified_registry import command_registry
 from ncatbot.core import MessageEvent, NcatBotEvent
 from ncatbot.utils import get_log
 
@@ -13,12 +13,14 @@ COMMAND_RESPONSE: str = "original_response"
 # 事件处理器调用计数
 HANDLER_CALL_COUNT: int = 0
 
+
 def reset_counters():
     """重置模块级计数器"""
     global HANDLER_CALL_COUNT
     HANDLER_CALL_COUNT = 0
     ReloadTestPlugin.load_count = 0
     ReloadTestPlugin.unload_count = 0
+
 
 class ReloadTestPlugin(NcatBotPlugin):
     """热重载测试插件"""
@@ -91,6 +93,7 @@ class ReloadTestPlugin(NcatBotPlugin):
     @classmethod
     def get_marker(cls) -> str:
         return cls.MARKER_VALUE
+
 
 # 导出模块级变量，方便测试访问
 plugin = ReloadTestPlugin

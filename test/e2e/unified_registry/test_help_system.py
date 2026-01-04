@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 from ncatbot.utils.testing import E2ETestSuite
-from ncatbot.core.service.builtin.unified_registry.command_system.registry.help_system import (
+from ncatbot.service.unified_registry.command_system.registry.help_system import (
     HelpGenerator,
     format_error_with_help,
 )
@@ -49,7 +49,7 @@ class TestHelpSystemE2E:
         """
         _cleanup_modules()
 
-        from ncatbot.core.service.builtin.unified_registry import command_registry
+        from ncatbot.service.unified_registry import command_registry
 
         async with E2ETestSuite() as suite:
             suite.index_plugin(str(HELP_PLUGIN_DIR))
@@ -105,7 +105,7 @@ class TestHelpSystemE2E:
         """
         _cleanup_modules()
 
-        from ncatbot.core.service.builtin.unified_registry import command_registry
+        from ncatbot.service.unified_registry import command_registry
 
         async with E2ETestSuite() as suite:
             suite.index_plugin(str(HELP_PLUGIN_DIR))
@@ -173,7 +173,7 @@ class TestHelpSystemE2E:
         """
         _cleanup_modules()
 
-        from ncatbot.core.service.builtin.unified_registry import command_registry
+        from ncatbot.service.unified_registry import command_registry
 
         async with E2ETestSuite() as suite:
             suite.index_plugin(str(HELP_PLUGIN_DIR))
@@ -232,7 +232,7 @@ class TestHelpSystemE2E:
         """
         _cleanup_modules()
 
-        from ncatbot.core.service.builtin.unified_registry import command_registry
+        from ncatbot.service.unified_registry import command_registry
 
         async with E2ETestSuite() as suite:
             suite.index_plugin(str(HELP_PLUGIN_DIR))

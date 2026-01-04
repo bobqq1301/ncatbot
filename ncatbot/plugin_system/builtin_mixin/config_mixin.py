@@ -14,8 +14,8 @@ from typing import Any, Dict, Callable, TYPE_CHECKING, Optional
 from ncatbot.utils import get_log
 
 if TYPE_CHECKING:
-    from ncatbot.core.service import ServiceManager
-    from ncatbot.core.service.builtin import ConfigItem, PluginConfig
+    from ncatbot.service import ServiceManager
+    from ncatbot.service.builtin import ConfigItem, PluginConfig
 
 LOG = get_log("ConfigMixin")
 

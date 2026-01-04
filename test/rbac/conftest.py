@@ -5,7 +5,7 @@ RBAC 测试共享 fixtures
 import pytest
 from pathlib import Path
 
-from ncatbot.core.service.builtin.rbac import RBACService
+from ncatbot.service.rbac import RBACService
 
 
 # 测试数据存储目录

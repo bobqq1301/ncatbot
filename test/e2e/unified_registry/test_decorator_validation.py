@@ -12,11 +12,11 @@ import sys
 from pathlib import Path
 
 from ncatbot.utils.testing import E2ETestSuite
-from ncatbot.core.service.builtin.unified_registry import command_registry
-from ncatbot.core.service.builtin.unified_registry.command_system.analyzer.decorator_validator import (
+from ncatbot.service.unified_registry import command_registry
+from ncatbot.service.unified_registry.command_system.analyzer.decorator_validator import (
     DecoratorValidator,
 )
-from ncatbot.core.service.builtin.unified_registry.command_system.utils import (
+from ncatbot.service.unified_registry.command_system.utils import (
     CommandRegistrationError,
     OptionSpec,
     ParameterSpec,

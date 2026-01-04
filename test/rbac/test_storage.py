@@ -2,7 +2,7 @@
 RBAC 存储模块单元测试
 """
 
-from ncatbot.core.service.builtin.rbac.storage import (
+from ncatbot.service.rbac.storage import (
     save_rbac_data,
     load_rbac_data,
     serialize_rbac_state,

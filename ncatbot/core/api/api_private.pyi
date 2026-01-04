@@ -7,7 +7,7 @@
 
 from typing import Optional, Union
 from ncatbot.core.api.client import IAPIClient
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 
 class PrivateAPI:
     """

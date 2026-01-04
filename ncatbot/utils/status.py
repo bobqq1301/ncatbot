@@ -5,7 +5,7 @@ from typing import Any, Set, Optional, TYPE_CHECKING
 import logging
 
 if TYPE_CHECKING:
-    from ncatbot.core.service.builtin.rbac import RBACService
+    from ncatbot.service.builtin.rbac import RBACService
 
 
 class Status:

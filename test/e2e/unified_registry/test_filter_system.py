@@ -14,10 +14,10 @@ from pathlib import Path
 import pytest
 
 from ncatbot.utils.testing import E2ETestSuite
-from ncatbot.core.service.builtin.unified_registry.filter_system.base import (
+from ncatbot.service.unified_registry.filter_system.base import (
     CombinedFilter,
 )
-from ncatbot.core.service.builtin.unified_registry.filter_system.builtin import (
+from ncatbot.service.unified_registry.filter_system.builtin import (
     GroupFilter,
     PrivateFilter,
     CustomFilter,
@@ -330,7 +330,7 @@ class TestFilterSystemE2E:
         """测试插件加载成功"""
         _cleanup_modules()
 
-        from ncatbot.core.service.builtin.unified_registry import command_registry
+        from ncatbot.service.unified_registry import command_registry
 
         async with E2ETestSuite() as suite:
             suite.index_plugin(str(FILTER_PLUGIN_DIR))

@@ -7,7 +7,7 @@
 - 完整的消息级别命令解析
 """
 
-from ncatbot.core.service.builtin.unified_registry.command_system.lexer import (
+from ncatbot.service.unified_registry.command_system.lexer import (
     MessageTokenizer,
     parse_message_command,
     TokenType,

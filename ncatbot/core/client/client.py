@@ -9,13 +9,13 @@ from typing import List, Type, TypeVar, TYPE_CHECKING
 from ncatbot.utils import get_log
 from ncatbot.utils.error import NcatBotError
 from ncatbot.core.api import BotAPI
-from ncatbot.core.service import (
+from ncatbot.service import (
     ServiceManager,
     MessageRouter,
     PreUploadService,
     UnifiedRegistryService,
 )
-from ncatbot.core.service.builtin import (
+from ncatbot.service import (
     PluginConfigService,
     FileWatcherService,
     PluginDataService,

@@ -5,8 +5,8 @@
 import pytest
 import logging
 
-from ncatbot.core.service.builtin.time_task import TimeTaskService
-from ncatbot.core.service.builtin.time_task.parser import TimeTaskParser
+from ncatbot.service.time_task import TimeTaskService
+from ncatbot.service.time_task.parser import TimeTaskParser
 
 
 class TestTimeTaskServiceErrors:

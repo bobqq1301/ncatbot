@@ -1,15 +1,15 @@
 """过滤器测试插件"""
 
 from ncatbot.plugin_system import NcatBotPlugin
-from ncatbot.core.service.builtin.unified_registry import command_registry
-from ncatbot.core.service.builtin.unified_registry.filter_system.decorators import (
+from ncatbot.service.unified_registry import command_registry
+from ncatbot.service.unified_registry.filter_system.decorators import (
     group_filter,
     private_filter,
     admin_filter,
     root_filter,
     filter,
 )
-from ncatbot.core.service.builtin.unified_registry.filter_system.builtin import (
+from ncatbot.service.unified_registry.filter_system.builtin import (
     GroupFilter,
     PrivateFilter,
     AdminFilter,

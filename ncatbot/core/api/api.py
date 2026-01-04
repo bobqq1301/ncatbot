@@ -16,7 +16,7 @@ from .api_private import PrivateAPI
 from .api_support import SupportAPI
 
 if TYPE_CHECKING:
-    from ncatbot.core.service import ServiceManager
+    from ncatbot.service import ServiceManager
 
 
 class BotAPI(AccountAPI, GroupAPI, MessageAPI, PrivateAPI, SupportAPI):

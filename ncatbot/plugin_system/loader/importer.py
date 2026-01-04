@@ -16,7 +16,6 @@ from typing import Dict, List, Optional
 
 from ncatbot.utils import get_log
 
-from ..config import config
 from ..packhelper import PackageHelper
 from .finder import (
     TOP_PACKAGE_NAME,
@@ -25,7 +24,7 @@ from .finder import (
 )
 
 LOG = get_log("ModuleImporter")
-_AUTO_INSTALL = config.auto_install_pip_pack
+_AUTO_INSTALL = True
 
 
 class _ModuleImporter:

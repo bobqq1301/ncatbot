@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 from ncatbot.core import EventBus
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 from ncatbot.plugin_system import NcatBotPlugin
 from ncatbot.plugin_system.loader import PluginLoader
 
@@ -92,7 +92,7 @@ def temp_data_dir():
 @pytest_asyncio.fixture
 async def service_manager(temp_data_dir, monkeypatch):
     """创建服务管理器"""
-    from ncatbot.core.service.builtin import (
+    from ncatbot.service import (
         PluginConfigService,
         PluginDataService,
         UnifiedRegistryService,

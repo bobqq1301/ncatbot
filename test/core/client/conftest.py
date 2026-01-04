@@ -54,7 +54,7 @@ def mock_adapter():
 @pytest.fixture
 def mock_services():
     """Mock 的 ServiceManager 实例"""
-    from ncatbot.core.service import ServiceManager
+    from ncatbot.service import ServiceManager
 
     services = MagicMock(spec=ServiceManager)
     services.load_all = AsyncMock()

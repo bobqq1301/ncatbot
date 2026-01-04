@@ -6,7 +6,6 @@
 
 import pytest
 from typing import List, Dict, Set
-from pathlib import Path
 from unittest.mock import MagicMock
 from uuid import UUID
 
@@ -34,7 +33,6 @@ class MockBasePlugin:
         self._event_bus = event_bus
         self._handlers_id: Set[UUID] = set()
         self.config: dict = {}
-        self.workspace = kwargs.get("workspace", Path("/tmp"))
 
         # 生命周期追踪
         self._init_called = False

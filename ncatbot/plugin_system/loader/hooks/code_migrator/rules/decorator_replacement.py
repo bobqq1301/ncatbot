@@ -38,9 +38,7 @@ class DeprecatedDecoratorReplacementRule(MigrationRule):
             ),
             "request_event": (["on_request"], ["on_request"]),
         }
-        self.import_module = (
-            "ncatbot.core.service.builtin.unified_registry.filter_system"
-        )
+        self.import_module = "ncatbot.service.builtin.unified_registry.filter_system"
 
     @property
     def name(self) -> str:

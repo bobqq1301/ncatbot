@@ -3,7 +3,7 @@ PermissionTrie 单元测试
 """
 
 import pytest
-from ncatbot.core.service.builtin.rbac.trie import PermissionTrie
+from ncatbot.service.rbac.trie import PermissionTrie
 
 
 class TestPermissionTrieBasic:

@@ -7,7 +7,7 @@ from ncatbot.utils import get_log
 
 from ..base_plugin import BasePlugin
 from ncatbot.core import EventBus
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 from ..pluginsys_err import (
     PluginDependencyError,
     PluginVersionError,

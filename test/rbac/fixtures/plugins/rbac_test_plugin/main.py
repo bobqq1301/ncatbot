@@ -6,7 +6,7 @@ RBAC 和过滤器集成测试插件
 
 from ncatbot.plugin_system import NcatBotPlugin
 from ncatbot.core import MessageEvent
-from ncatbot.core.service.builtin.unified_registry import (
+from ncatbot.service.unified_registry import (
     command_registry,
     admin_filter,
     root_filter,

@@ -8,7 +8,7 @@ import pytest
 import asyncio
 from typing import List, Optional
 
-from ncatbot.core.service import ServiceManager, BaseService
+from ncatbot.service import ServiceManager, BaseService
 
 
 # =============================================================================

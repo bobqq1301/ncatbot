@@ -10,7 +10,7 @@ import tempfile
 import shutil
 
 from ncatbot.core.client.event_bus import EventBus
-from ncatbot.core.service import ServiceManager, BaseService
+from ncatbot.service import ServiceManager, BaseService
 
 
 # =============================================================================

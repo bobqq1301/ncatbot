@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from ncatbot.utils import global_status
-from ncatbot.core.service.builtin.rbac.service import RBACService
+from ncatbot.service.rbac.service import RBACService
 
 
 # 测试插件目录

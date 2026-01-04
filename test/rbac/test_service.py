@@ -3,7 +3,7 @@ RBACService 单元测试
 """
 
 import pytest
-from ncatbot.core.service.builtin.rbac import RBACService
+from ncatbot.service.rbac import RBACService
 from pathlib import Path
 
 

@@ -17,7 +17,7 @@ from ncatbot.core.adapter import launch_napcat_service
 
 if TYPE_CHECKING:
     from ncatbot.core.api import BotAPI
-    from ncatbot.core.service import ServiceManager
+    from ncatbot.service import ServiceManager
     from .event_bus import EventBus
     from .registry import EventRegistry
     from .dispatcher import EventDispatcher

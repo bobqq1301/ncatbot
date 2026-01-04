@@ -17,7 +17,7 @@ from typing import Dict, Optional, TYPE_CHECKING
 
 from ncatbot.utils.testing import E2ETestSuite
 from ncatbot.utils import ncatbot_config
-from ncatbot.core.service.builtin.unified_registry import command_registry
+from ncatbot.service.unified_registry import command_registry
 
 if TYPE_CHECKING:
     from ncatbot.utils.testing import E2ETestSuite

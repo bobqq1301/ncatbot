@@ -7,16 +7,15 @@
 # @Copyright (c) 2025 by Fish-LP, Fcatbot使用许可协议
 # -------------------------
 from uuid import UUID
-from pathlib import Path
 from typing import Any, Dict, List, Set, Union, TYPE_CHECKING, Optional, Callable
 
 from ncatbot.utils import get_log
 from ncatbot.core import EventBus, NcatBotEvent
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 
 if TYPE_CHECKING:
     from .builtin_mixin.ncatbot_plugin import NcatBotPlugin
-    from ncatbot.core.service.builtin import (
+    from ncatbot.service.builtin import (
         RBACService,
         PluginConfigService,
         PluginConfig,
@@ -42,7 +41,6 @@ class BasePlugin:
     dependencies: Dict[str, str] = {}
 
     # -------- 运行时属性, 插件 __onload__ 时自行注入 --------
-    workspace: Path  # 插件工作目录, 不知道有什么用
     config: "PluginConfig"  # 持久化配置对象, __onload__ 时调用有关服务自动加载
     data: Dict[str, Any]  # 持久化数据字典, __onload__ 时调用有关服务自动加载
 
@@ -56,7 +54,6 @@ class BasePlugin:
     # -------- 内部属性 --------
     _debug: bool
     _handlers_id: Set[UUID]  # 用于跟踪已注册的处理器 ID
-    _legacy_data_file: Path  # 旧版数据文件路径（用于数据迁移）
 
     # ------------------------------------------------------------------
     # 生命周期方法（子类重写）

@@ -14,8 +14,8 @@ import os
 from unittest.mock import patch
 import yaml
 
-from ncatbot.core.service import ServiceManager
-from ncatbot.core.service.builtin.plugin_config import PluginConfigService
+from ncatbot.service import ServiceManager
+from ncatbot.service.plugin_config import PluginConfigService
 from ncatbot.core.client.event_bus import EventBus
 
 
@@ -52,7 +52,7 @@ async def service_manager_with_config(temp_config_file):
 
     # 注册配置服务
     with patch(
-        "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+        "ncatbot.service.plugin_config.service.CONFIG_PATH",
         temp_config_file,
     ):
         manager.register(PluginConfigService)
@@ -77,7 +77,7 @@ class TestServiceManagerIntegration:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -95,7 +95,7 @@ class TestServiceManagerIntegration:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -120,7 +120,7 @@ class TestServiceManagerIntegration:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -157,7 +157,7 @@ class TestPluginLoaderIntegration:
         event_bus = EventBus()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -175,12 +175,12 @@ class TestPluginLoaderIntegration:
     @pytest.mark.asyncio
     async def test_plugin_can_access_config_service(self, temp_config_file):
         """测试插件可以访问配置服务"""
-        from ncatbot.core.service import ServiceManager
+        from ncatbot.service import ServiceManager
 
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -235,7 +235,7 @@ class TestFinegrainedPersistence:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -266,7 +266,7 @@ class TestFinegrainedPersistence:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)
@@ -298,7 +298,7 @@ class TestFinegrainedPersistence:
         manager = ServiceManager()
 
         with patch(
-            "ncatbot.core.service.builtin.plugin_config.service.CONFIG_PATH",
+            "ncatbot.service.plugin_config.service.CONFIG_PATH",
             temp_config_file,
         ):
             manager.register(PluginConfigService)

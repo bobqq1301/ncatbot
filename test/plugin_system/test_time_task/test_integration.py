@@ -5,7 +5,7 @@ TimeTaskMixin 集成测试和事件类型格式测试
 import time
 import pytest
 
-from ncatbot.core.service.builtin.time_task import TimeTaskService
+from ncatbot.service.time_task import TimeTaskService
 from ncatbot.plugin_system.builtin_mixin.time_task_mixin import TimeTaskMixin
 from .conftest import MockEventBus, MockBotClient, MockServiceManager
 

@@ -10,17 +10,17 @@
 import pytest
 from unittest.mock import Mock
 
-from ncatbot.core.service.builtin.unified_registry import (
+from ncatbot.service.unified_registry import (
     UnifiedRegistryService,
     filter_registry,
 )
-from ncatbot.core.service.builtin.unified_registry.executor import FunctionExecutor
-from ncatbot.core.service.builtin.unified_registry.command_runner import CommandRunner
-from ncatbot.core.service.builtin.unified_registry.filter_system.event_registry import (
+from ncatbot.service.unified_registry.executor import FunctionExecutor
+from ncatbot.service.unified_registry.command_runner import CommandRunner
+from ncatbot.service.unified_registry.filter_system.event_registry import (
     EventRegistry,
 )
-from ncatbot.core.service.builtin.unified_registry.filter_system.base import BaseFilter
-from ncatbot.core.service.builtin.unified_registry.command_system.lexer import (
+from ncatbot.service.unified_registry.filter_system.base import BaseFilter
+from ncatbot.service.unified_registry.command_system.lexer import (
     StringTokenizer,
     CommandParser,
 )
@@ -279,7 +279,7 @@ class TestServiceFullFlow:
 
     def test_service_clear_and_reinitialize(self, clean_registries):
         """测试服务清理和重新初始化"""
-        from ncatbot.core.service.builtin.unified_registry.executor import (
+        from ncatbot.service.unified_registry.executor import (
             FunctionExecutor,
         )
 

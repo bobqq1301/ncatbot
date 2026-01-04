@@ -7,7 +7,7 @@
 
 from typing import List, Optional, Union, Literal
 from ncatbot.core.api.client import IAPIClient
-from ncatbot.core.service import ServiceManager
+from ncatbot.service import ServiceManager
 
 # 前向声明
 class EssenceMessage: ...
