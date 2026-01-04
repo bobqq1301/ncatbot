@@ -18,13 +18,12 @@ class Plugin(NcatBotPlugin):
 
         # 注册配置项示例
         self.register_config(
-            key="greeting",
-            default="你好",
-            on_change=self.on_greeting_change,
+            name="greeting",
+            default_value="你好",
             description="问候语",
-            value_type="string",
-            allowed_values=["你好", "Hello", "Hi"],
+            value_type=str,
             metadata={"category": "greeting", "max_length": 20},
+            on_change=self.on_greeting_change,
         )
 
     @command_registry.command("test", description="测试命令")
