@@ -4,7 +4,7 @@ import uuid
 from typing import Dict, Optional, Callable, Awaitable
 
 from ..base import BaseService
-from ncatbot.core.adapter.nc import NapCatWebSocket
+from ncatbot.adapter.nc import NapCatWebSocket
 from ncatbot.utils import get_log, ncatbot_config
 
 LOG = get_log("MessageRouter")

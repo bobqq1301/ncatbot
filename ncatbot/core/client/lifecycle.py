@@ -13,7 +13,7 @@ from pathlib import Path
 
 from ncatbot.utils import get_log, ncatbot_config
 from ncatbot.utils.error import NcatBotError
-from ncatbot.core.adapter import launch_napcat_service
+from ncatbot.adapter import launch_napcat_service
 
 if TYPE_CHECKING:
     from ncatbot.core.api import BotAPI

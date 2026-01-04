@@ -16,7 +16,7 @@ from .auth import AuthHandler, LoginStatus
 from .config_manager import ConfigManager
 from .platform import PlatformOps, UnsupportedPlatformError
 
-LOG = get_log("ncatbot.core.adapter.nc.service")
+LOG = get_log("ncatbot.adapter.nc.service")
 
 
 class NcatBotLoginError(NcatBotError):

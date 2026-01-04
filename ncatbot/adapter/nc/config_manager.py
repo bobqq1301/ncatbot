@@ -14,7 +14,7 @@ from ncatbot.utils import get_log, ncatbot_config
 from .constants import config as default_webui_config
 from .platform import PlatformOps
 
-LOG = get_log("ncatbot.core.adapter.nc.config")
+LOG = get_log("ncatbot.adapter.nc.config")
 
 
 class ConfigManager:

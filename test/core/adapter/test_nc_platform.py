@@ -8,13 +8,13 @@ import pytest
 from pathlib import Path
 from unittest.mock import patch
 
-from ncatbot.core.adapter.nc.platform import (
+from ncatbot.adapter.nc.platform import (
     PlatformOps,
     WindowsOps,
     LinuxOps,
     UnsupportedPlatformError,
 )
-from ncatbot.core.adapter.nc.auth import LoginStatus
+from ncatbot.adapter.nc.auth import LoginStatus
 
 
 class TestLoginStatus:

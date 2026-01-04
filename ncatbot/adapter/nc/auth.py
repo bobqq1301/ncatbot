@@ -15,7 +15,7 @@ import qrcode
 from ncatbot.utils import get_log, ncatbot_config
 from .utils import post_json
 
-LOG = get_log("ncatbot.core.adapter.nc.auth")
+LOG = get_log("ncatbot.adapter.nc.auth")
 
 
 def gen_hashed_token(token: str) -> str:
