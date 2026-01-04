@@ -121,9 +121,7 @@ class NapCatService:
         )
 
         # 跳过 WebUI 交互检查
-        if (
-            not ncatbot_config.napcat.enable_webui
-        ):
+        if not ncatbot_config.napcat.enable_webui:
             LOG.warning(
                 f"跳过基于 WebUI 交互的检查, "
                 f"请自行确保 NapCat 已登录正确的 QQ {ncatbot_config.bot_uin}"
@@ -195,10 +193,10 @@ class NapCatService:
                 LOG.info("快速登录成功, 跳过登录引导")
         else:
             # 无 WebUI
-            timeout = ncatbot_config.websocket_timeout
-            if not self.is_service_ok(timeout):
+            TIMEOUT = 3
+            if not self.is_service_ok(TIMEOUT):
                 raise TimeoutError(
-                    f"NapCat 未能在 {timeout} 秒内启动, WebSocket 连接失败"
+                    f"NapCat 未能在 {TIMEOUT} 秒内启动, WebSocket 连接失败"
                 )
 
     # ==================== 主入口 ====================

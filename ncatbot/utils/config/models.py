@@ -55,7 +55,6 @@ class PluginConfig(BaseConfig):
     model_config = ConfigDict(validate_assignment=True, extra="allow")
 
     plugins_dir: str = Field(default="plugins")
-    plugin_whitelist: List[str] = Field(default_factory=list)
     plugin_blacklist: List[str] = Field(default_factory=list)
     load_plugin: bool = False
 
@@ -80,7 +79,6 @@ class NapCatConfig(BaseConfig):
     webui_token: str = DEFAULT_WEBUI_TOKEN
     enable_webui: bool = True
     enable_update_check: bool = False
-    stop_napcat: bool = False
     remote_mode: bool = False
 
     @field_validator("ws_uri")
@@ -171,23 +169,12 @@ class Config(BaseConfig):
     bot_uin: str = DEFAULT_BOT_UIN
     root: str = DEFAULT_ROOT
     debug: bool = False
-    enable_webui_interaction: bool = True
-    github_proxy: Optional[str] = Field(
-        default_factory=lambda: os.getenv("GITHUB_PROXY")
-    )
     check_ncatbot_update: bool = True
-    skip_ncatbot_install_check: bool = False
-    websocket_timeout: int = 15
 
     @field_validator("bot_uin", "root", mode="before")
     @classmethod
     def _coerce_to_str(cls, v) -> str:
         return str(v)
-
-    @field_validator("websocket_timeout")
-    @classmethod
-    def _validate_timeout(cls, v: int) -> int:
-        return max(1, v)
 
     def is_local(self) -> bool:
         """NapCat 是否为本地服务。"""

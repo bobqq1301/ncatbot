@@ -163,17 +163,6 @@ class TestConfigManagerMain:
             manager.set_debug(True)
             assert manager.debug is True
 
-    def test_websocket_timeout(self):
-        """WebSocket 超时读写（通过 config 属性访问）。"""
-        with tempfile.TemporaryDirectory() as tmpdir:
-            path = os.path.join(tmpdir, "config.yaml")
-            with open(path, "w", encoding="utf-8") as f:
-                yaml.dump({}, f)
-
-            manager = ConfigManager(path)
-            manager.config.websocket_timeout = 30
-            assert manager.config.websocket_timeout == 30
-
 
 class TestConfigManagerUtility:
     """工具方法测试。"""

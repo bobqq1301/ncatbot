@@ -12,7 +12,7 @@ from typing import Optional, Callable, Awaitable
 import websockets
 from websockets.exceptions import ConnectionClosedError
 
-from ncatbot.utils import get_log, ncatbot_config
+from ncatbot.utils import get_log
 from ncatbot.utils.error import NcatBotConnectionError
 
 LOG = get_log("NapCatWebSocket")
@@ -181,13 +181,16 @@ class NapCatWebSocket:
         """尝试重连"""
         from .service import NapCatService
 
-        if NapCatService().is_service_ok(ncatbot_config.websocket_timeout):
-            try:
-                self._client = await websockets.connect(
-                    uri, close_timeout=0.2, max_size=2**30, open_timeout=1
-                )
-                LOG.info("重连成功")
-                return True
-            except Exception as e:
-                LOG.error(f"重连失败: {e}")
+        for p in range(1, 6):
+            LOG.info(f"重连尝试 {p}/5...")
+            await asyncio.sleep(2**p * 0.5)
+            if NapCatService().is_service_ok():
+                try:
+                    self._client = await websockets.connect(
+                        uri, close_timeout=0.2, max_size=2**30, open_timeout=1
+                    )
+                    LOG.info("重连成功")
+                    return True
+                except Exception as e:
+                    LOG.error(f"重连失败: {e}")
         return False

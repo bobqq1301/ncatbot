@@ -22,7 +22,6 @@ class TestPluginConfig:
         """默认值测试。"""
         config = PluginConfig()
         assert config.plugins_dir == "plugins"
-        assert config.plugin_whitelist == []
         assert config.plugin_blacklist == []
         assert config.load_plugin is False
 
@@ -30,12 +29,10 @@ class TestPluginConfig:
         """自定义值测试。"""
         config = PluginConfig(
             plugins_dir="my_plugins",
-            plugin_whitelist=["a", "b"],
             plugin_blacklist=["c"],
             load_plugin=False,
         )
         assert config.plugins_dir == "my_plugins"
-        assert config.plugin_whitelist == ["a", "b"]
         assert config.plugin_blacklist == ["c"]
         assert config.load_plugin is False
 
@@ -111,7 +108,6 @@ class TestConfig:
         assert config.bot_uin == DEFAULT_BOT_UIN
         assert config.root == DEFAULT_ROOT
         assert config.debug is False
-        assert config.websocket_timeout == 15
 
     def test_nested_configs(self):
         """嵌套配置测试。"""
@@ -127,11 +123,6 @@ class TestConfig:
         config = Config(bot_uin=123456789, root=987654321)
         assert config.bot_uin == "123456789"
         assert config.root == "987654321"
-
-    def test_timeout_validation(self):
-        """超时时间校验。"""
-        config = Config(websocket_timeout=0)
-        assert config.websocket_timeout >= 1
 
     def test_is_local(self):
         """本地服务判断。"""
